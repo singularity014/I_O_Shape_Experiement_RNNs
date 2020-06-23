@@ -55,3 +55,28 @@ def lstm2():
     print()
 
 lstm2()
+
+
+def gru1():
+    input_ = Input(shape=(T, D))
+    gru_output = GRU(M, return_state=True)(input_)
+    model = Model(inputs=input_, outputs=gru_output)
+    o, h = model.predict(X)
+    print('GRU1 : ------')
+    print(f'gru1 output - {o}')
+    print(f'gru2 hidden state - {h}')
+    print()
+
+gru1()
+
+def gru2():
+    input_ = Input(shape=(T, D))
+    gru_output = GRU(M, return_state=True, return_sequences=True)(input_)
+    model = Model(inputs=input_, outputs=gru_output)
+    o, h = model.predict(X)
+    print('GRU2 : ------')
+    print(f'gru2 output - {o}')
+    print(f'gru2 hidden state - {h}')
+    print()
+
+gru2()
