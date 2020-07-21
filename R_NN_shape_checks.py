@@ -42,7 +42,7 @@ def lstm1():
 
 lstm1()
 
-# First LSTM Model
+# Second LSTM arch
 def lstm2():
     input_ = Input(shape=(T, D))
     lstm_output = LSTM(M, return_state=True, return_sequences=True)(input_)
